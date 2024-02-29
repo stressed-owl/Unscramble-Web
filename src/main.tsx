@@ -4,18 +4,21 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import "./index.css";
+import Root from "./routes/Root";
 import HomePage from "./pages/HomePage";
+import './index.css'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />
+    element: <Root />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />
+      }
+    ]
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-);
+ReactDOM.createRoot(document.getElementById("root")!).render(<RouterProvider router={router} />);

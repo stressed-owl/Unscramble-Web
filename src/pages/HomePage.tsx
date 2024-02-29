@@ -1,9 +1,15 @@
 import React from 'react'
+import CustomButton from '../components/UI/buttons/CustomButton'
 
 const HomePage = () => {
+
+  const handleGuessClick = () => {
+    alert('ETH');
+  }
+
   return (
     <>
-        <h1>Home page</h1>
+        <CustomButton onClick={handleGuessClick}>Guess</CustomButton>
     </>
   )
 }
